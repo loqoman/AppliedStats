@@ -4,7 +4,7 @@
 library(ggplot2)
 library(readxl)  # Excel reading lib
 
-rawData = read_excel("Programming/HAppliedStats/FirstYearGPA.xls")
+rawData = read_excel("Programming/AppliedStats/FirstYearGPA.xls")
 
 orderedData = rawData[order(rawData$FirstGen), ] # What this line does is reorderes the rows based off of firstGen or not
                                                  # The first 195 lines are NOT first gen
@@ -20,3 +20,9 @@ firstGenGPASD = sd(firstGenRows$GPA)
 
 notFirstGenGPAMean = mean(notFirstGenRows$GPA)
 notFirstGenGPASD = sd(notFirstGenRows$GPA)
+
+
+# Work for part b
+partBRegression = lm(rawData$GPA~rawData$FirstGen)
+summary(partBRegression)
+
