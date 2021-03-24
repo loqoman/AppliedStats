@@ -30,10 +30,11 @@ summary(OneDRegression)
 
 
 
-
 # === Work for part 2 ===
 
 # === Work for part 5 ===
 # Creating a col for income/1000
 rawData$ScaledIncome = rawData$Income/1000
 
+Part5Regression = glm(rawData$ObamaWin~rawData$ScaledIncome, family=binomial("logit"))
+summary(Part5Regression)
